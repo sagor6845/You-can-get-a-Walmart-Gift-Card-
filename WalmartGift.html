@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎁 Free Walmart Gift Card - Limited Time Offer!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ffffff, #f0f8ff);
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+
+    .card {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 15px;
+      animation: popIn 1s ease-in-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      color: #0071ce;
+      font-size: 28px;
+    }
+
+    .gift-img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #d50000;
+      font-weight: bold;
+    }
+
+    .countdown {
+      font-size: 20px;
+      margin: 10px 0;
+      color: #0071ce;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      background: #f9a825;
+      color: #000;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffb300;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="gift-img" src="https://i.imgur.com/V1m3hBA.png" alt="Walmart Gift Card">
+    <h1>🎉 You’ve Been Selected!</h1>
+    <p class="highlight">Claim Your <u>$100 Walmart Gift Card</u> Now!</p>
+    <p>We are rewarding 10 lucky visitors every hour. ⏳</p>
+    <div class="countdown">Hurry! Offer expires in <span id="timer">03:00</span></div>
+    <a href="https://singingfiles.com/show.php?l=0&u=2413235&id=68831" class="btn" target="_blank">🎁 Claim My Gift Card</a>
+  </div>
+
+  <div class="footer">
+    *Limited-time offer. First come, first served.
+  </div>
+
+  <script>
+    let time = 180;
+    const timer = document.getElementById("timer");
+
+    function updateTimer() {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      timer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      time--;
+      if (time >= 0) {
+        setTimeout(updateTimer, 1000);
+      } else {
+        timer.textContent = "EXPIRED";
+      }
+    }
+
+    updateTimer();
+  </script>
+</body>
+</html>
